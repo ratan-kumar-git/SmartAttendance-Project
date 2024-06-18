@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Here can write all code for Home-->
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<div class="page">
+    <div class="display">
+        <div class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="static\image 4.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3"> SmartAttendance Make Easy Institute Student
+                        Attendance
+                    </h1>
+                    <p class="lead">Developing a student attendance system with face and fingerprint recognition in Python.
+                        Utilizing webcam form Quick Attendance.
+                    </p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-primary btn-lg px-4 ms-1"><a href="/login" style="color: white;">Get Started</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Here can add other div -->
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+{% endblock %}

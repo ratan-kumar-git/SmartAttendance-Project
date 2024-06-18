@@ -1,0 +1,120 @@
+.display {
+    height: auto;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactus-container {
+    background-color: #93dbf6;
+    padding: 20px;
+    border-radius: 20px;
+    height: 80%;
+    width: 70%;
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+
+.contactus-container h1 {
+    text-align: center;
+    margin: 10px;
+}
+.contactus-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-container {
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    margin: 10px;
+    width: 80%;
+    height: 45px;
+}
+
+.input-container input {
+    background-color:transparent;
+    border-radius: 25px;
+    width: 88%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 50px;
+}
+
+.input-container i {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 13px;
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+
+}
+
+a {
+    text-decoration: none;
+    
+}
+
+.contactus-container input[type="submit"] {
+    width: 80%;
+    height: 45px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    background-color: #007bff;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+.contactus-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.input-container-msg {
+    width: 80%;
+    margin: 10px;
+    border: none;
+    font-size: 16px;
+    background-color: #f4f4f4;
+    border-radius: 25px;   
+    
+}
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+textarea:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #007bff; /* Change border color on focus */
+}
+#register-massage {
+    list-style: none;
+    text-align: center;
+    font-size: 14px;
+    color: #ff0000;
+}
+@media (max-width:768px) {
+    .contactus-container {
+        width: 90%;
+
+    }
+
+
+   
+}

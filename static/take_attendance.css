@@ -1,0 +1,153 @@
+.main-page {
+    height: auto;
+    width: 100%; 
+    display: flex;
+}
+
+.dashboard-page {
+    height: auto;
+    width: 100%;
+}
+
+.Dashboard-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 100px 40px 8px;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+    padding: 10px 20px 10px;
+}
+
+.Dashboard-menu-header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blueviolet;
+}
+.Dashboard-menu-header h7 {
+    color: rgb(27, 83, 4);
+    font-weight: bold;
+}
+
+.Dashboard-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: 8px 40px 30px;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+    flex-wrap: wrap;
+    padding: 30px 10px 10px;
+}
+
+.box1 {
+    width: auto;
+    height: 400px;
+}
+
+.box1 h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.video-container img {
+    margin: 5px 10px 25px;
+    height: auto;
+    width: 320px;
+    border-radius: 25px;
+}
+
+.input-container {
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    width: auto;
+    height: 45px;
+}
+
+.input-container input {
+    background-color:transparent;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.box2 {
+    width: 50%;
+    height: auto;
+}
+
+.box2 h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.attendance-table {
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: auto;
+    font-size: 15px;   
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+td i {
+    margin-left: 20px;
+    color: rgb(19, 167, 221);
+}
+.attendance-table tr:hover {
+    background-color: rgb(255, 193, 172);
+}
+
+@media (max-width:768px) {
+    .Dashboard-menu-header h1 {
+        font-size: 10px;
+    }
+    .Dashboard-menu-header h7 {
+        font-size: 5px;
+    }
+
+    .box1 {
+        height: 320px;
+    }
+
+    .box1 h1 {
+        font-size: 15px;
+    }
+
+    .video-container img {
+        width: 220px;
+
+    }
+
+    .box2 {
+        width: 95%;
+    }
+    
+    .box2 h1 {
+        font-size: 15px;
+    }
+    
+    .attendance-table {
+        font-size: 12px;   
+    }
+}

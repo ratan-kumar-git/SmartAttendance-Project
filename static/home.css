@@ -1,0 +1,8 @@
+.page {
+    height: auto;
+    width: 100%; 
+    display: flex;
+}
+.display {
+    width: 100%;
+}

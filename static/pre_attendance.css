@@ -1,0 +1,150 @@
+.main-page {
+    height: auto;
+    width: 100%; 
+    display: flex;
+}
+
+.dashboard-page {
+    height: auto;
+    width: 100%;
+}
+
+.Dashboard-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 100px 40px 8px;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+    padding: 10px 20px 10px;
+}
+
+.Dashboard-menu-header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blueviolet;
+}
+.Dashboard-menu-header h7 {
+    color: rgb(27, 83, 4);
+    font-weight: bold;
+}
+
+.Dashboard-menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin: 8px 40px 8px;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+    flex-wrap: wrap;
+}
+
+.box {
+    width: 200px;
+    height: auto;
+    margin: 35px; 
+    border: 2px solid #202020;
+    border-radius: 25px;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.custom-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+    margin: 5px;
+}
+
+
+.box a {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(165, 62, 62);
+    color: rgb(243, 238, 238);
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.Dashboard-menu2 {
+    width: auto;
+    height: auto;
+    margin: 8px 40px 40px;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+}
+
+.Dashboard-menu2 h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.Dashboard-menu2 form {
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.attendance-table {
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: auto;
+    font-size: 15px;
+    padding: 10px 0px 30px 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+td i {
+    margin-left: 20px;
+    color: rgb(19, 167, 221);
+}
+
+.attendance-table tr:hover {
+    background-color: rgb(255, 193, 172);
+}
+
+@media (max-width:768px) {
+    
+    .Dashboard-menu-header h1 {
+        font-size: 10px;
+    }
+    .Dashboard-menu-header h7 {
+        font-size: 5px;
+    }
+    
+    .Dashboard-menu2 h1 {
+        font-size: 13px;
+    
+    }
+    
+    .Dashboard-menu2 form {
+        font-size: 13px;
+    
+    }
+
+    .attendance-table {
+        font-size: 13px;
+    }
+
+}

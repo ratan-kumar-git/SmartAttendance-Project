@@ -1,0 +1,202 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    width: 100%;
+    height: auto;
+}
+
+/* Style for Hearder */
+
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(0,187,255);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: fixed;  
+}
+
+.logo {
+    font-size: 32px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    width: 25%;
+}
+.navbars {
+    width: 55%;
+}
+
+.navbars a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    padding: 14px 16px;
+    margin-left: 20px;
+
+}
+
+.navbars a:hover {
+    background-color: #ddd;
+    color: #333;
+    border-radius: 30px;
+}
+
+.navbars a.active {
+    background-color: #ddd;
+    color: #333;
+    border-radius: 30px;
+}
+
+.navbars a.active:hover {
+    background-color: #ddd;
+    color: #333;
+    border-radius: 30px;
+}
+
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 25px;
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+.login-signup {
+    position: relative;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    border-radius: 25px;
+    padding: 14px 16px;
+    margin: 10px;
+    border: none;
+    background-color: #ff9900;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    color: black; 
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+} 
+
+
+
+/* Style for Footer */
+
+.footer-box {
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+    color: #ddd;
+}
+
+.footer-box p {
+    color: #f4f4f4;
+    text-align: center;
+    padding: 40px;
+}
+
+.footer-box a {
+    text-decoration: none;
+    color: rgb(0, 225, 255);
+
+}
+
+
+
+@media (max-width:992px) {
+    .header {
+        padding: 20px;
+    }
+    
+}
+
+@media (max-width:768px) {
+    .icons {
+        display: inline-flex;
+
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon{
+        display: block;
+        
+    }
+
+    .navbars {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: rgb(147,219,246);
+        transition: .3s ease;
+        overflow: hidden;
+    }
+
+    #check:checked~.navbars{
+        height: 380px;
+    }
+
+    #check:checked~.login-signup{
+        height: auto;
+    }
+
+    .navbars a {
+        display: block;
+        font-size: 18px;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .login-signup {
+        position: absolute;
+        top: 535%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: transparent;
+        transition: .3s ease;
+        overflow: hidden;
+        background-color: transparent;
+    }   
+}
+
+
+

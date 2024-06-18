@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='edit_user.css') }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Javascript Code for continuous Update Time -->
+<script>
+    $(document).ready(function() {
+        function updateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+            const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+            $('#today_date').text('Date: ' + date);
+            $('#today_time').text('Time: ' + time);
+        }
+        setInterval(updateTime, 1000);  // Update every second
+        updateTime();  // Initial call to set the time immediately
+    });
+</script>
+
+<div class="main-page"> 
+    <div class="dashboard-page"> 
+        <div class="Dashboard-menu-header">
+            <h7 id="today_date">Date: {{ today_date }}</h7>
+            <h1>Dashboard | Edit User</h1>
+            <h7 id="today_time">Time: {{ today_time }}</h7> 
+        </div>
+
+        <div class="Dashboard-menux">
+            <form action="/edit_user/{{student.st_id}}" method="POST">
+                <h4>Edit Student Data</h4>
+                <div class="Dashboard-menu">
+                    <div class="box1">
+                        <div class="input-container">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="st_name" value="{{ student.st_name }}" placeholder="Name" required>
+                        </div>
+                        <div class="input-container">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" name="roll_no" value="{{ student.roll_no }}" placeholder="Roll No." required>
+                        </div>
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <select id="dropdown" name="branch" required>
+                                <option value="">Choose Branch</option>
+                                <option value="CSDA" {% if student.branch == 'CSDA' %} selected {% endif %}>CSDA</option>
+                                <option value="CSE" {% if student.branch == 'CSE' %} selected {% endif %}>CSE</option>
+                                <option value="EE" {% if student.branch == 'EE' %} selected {% endif %}>EE</option>
+                                <option value="CS" {% if student.branch == 'CS' %} selected {% endif %}>CS</option>
+                            </select>
+                        </div>
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <select id="dropdown" name="year" required>
+                                <option value="">Choose Year</option>
+                                <option value="1" {% if student.year == '1' %} selected {% endif %}>1st Year</option>
+                                <option value="2" {% if student.year == '2' %} selected {% endif %}>2nd Year</option>
+                                <option value="3" {% if student.year == '3' %} selected {% endif %}>3rd Year</option>
+                                <option value="4" {% if student.year == '4' %} selected {% endif %}>4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="box2">
+                        <div class="video-container">
+                            <img src="{{ url_for('static', filename='camera_demo.jpg') }}" alt="Video_capture">
+                            <p>Photo Updation Not Allowed</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-container">
+                    <input type="submit" value="Upadte">
+                </div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <span>{{ messages[0] }}</span>
+                    {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

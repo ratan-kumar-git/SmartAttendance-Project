@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="login-container">
+            <h1>Welcome to New User</h1>
+            <form action="/register" method="POST">
+                <div class="input-container">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="name" placeholder="Enter Name" required>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Enter Gmail" required>
+                </div>
+                <div class="input-container">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Enter Password" required>
+                </div>
+                <input type="submit" value="Register">
+            </form>
+            <p>I already have account?<a href="/login">Login</a></p>
+        </div>
+        <div class="img-container">
+            <a href="/"><i class="fas fa-home"></i></a></i>
+            <img src="static\image 2.jpg" alt="Login Photo">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <span id="register">{{ messages[0] }}</span>
+                {% endif %}
+            {% endwith %}
+        </div>  
+    </div>
+</body>
+</html>

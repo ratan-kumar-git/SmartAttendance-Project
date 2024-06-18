@@ -1,0 +1,260 @@
+.main-page {
+    height: auto;
+    width: 100%; 
+    display: flex;
+}
+
+.dashboard-page {
+    height: auto;
+    width: 100%;
+}
+
+/* First box of Dashboard */
+.Dashboard-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 100px 40px 8px;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+    padding: 10px 20px 10px;
+}
+
+.Dashboard-menu-header h1 {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blueviolet;
+}
+.Dashboard-menu-header h7 {
+    color: rgb(27, 83, 4);
+    font-weight: bold;
+}
+
+/* Second box of Dashboard */
+.Dashboard-menux {
+    margin: 8px 40px 8px;
+    border-radius: 25px;
+    background-color: #E5E1DA;
+    padding-bottom: 8px;
+}
+
+.Dashboard-menux h4 {
+    text-align: center;
+    font-size: 20px; 
+    color: black; 
+    padding-top: 15px;
+    font-weight: 550;
+}
+
+.Dashboard-menux span {
+    font-size: 13px;
+    color: red;
+    margin-left: 45%;
+}
+
+.Dashboard-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    width: auto;
+    height: auto;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+}
+
+.box1 {
+    width: 40%;
+    height: auto;
+    margin: 10px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-container {
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    margin: 10px;
+    width: 80%;
+    height: 45px;
+}
+
+
+.input-container input {
+    background-color:transparent;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 50px;
+}
+
+.input-container i {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 13px;
+    font-size: 20px;
+}
+
+.input-container select {
+    background-color:transparent;
+    border-radius: 25px;
+    width: 95%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding-left: 50px;
+    
+}
+
+.submit-container {
+    background-color: #f4f4f4;
+    border-radius: 25px;
+    width: 81%;
+    height: 45px;
+    margin: auto;
+    margin-bottom: 20px;
+
+}
+
+.submit-container input {
+    background-color:transparent;
+    border-radius: 25px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+
+/* Box 2 start */
+.box2 {
+    width: 40%;
+    height: auto;
+    margin: 10px;
+    padding: 10px;
+    
+}
+.video-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.video-container img {
+    height: 240px;
+    width: auto;
+    background-color: pink;
+    border-radius: 25px;
+}
+
+
+/* Third box of Dashboard */
+
+.Dashboard-menu2 {
+    width: auto;
+    height: auto;
+    margin: 8px 40px 40px;
+    background-color: #E5E1DA;
+    border-radius: 25px;
+}
+
+.Dashboard-menu2 h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.Dashboard-menu2 span {
+    font-size: 13px;
+    color: red;
+    margin-left: 43%;
+}
+
+.attendance-table {
+    height: 350px;
+    overflow-y: auto;
+    overflow-x: auto;
+    font-size: 15px;
+    padding: 10px 0px 30px 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 2px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.attendance-table tr:hover {
+    background-color: rgb(255, 193, 172);
+}
+
+td i {
+    margin-left: 20px;
+}
+
+@media (max-width:768px) {
+    
+    .Dashboard-menu-header h1 {
+        font-size: 10px;
+    }
+    .Dashboard-menu-header h7 {
+        font-size: 5px;
+    }
+
+    .Dashboard-menu {
+        flex-direction: column;
+    }
+
+    .box1, .box2 {
+        width: 95%;
+    }
+
+    .Dashboard-menux h4 {
+        font-size: 12px;
+    }
+
+    .video-container {
+        justify-content: center;
+    }
+
+    .video-container img {
+        width: 220px;
+        height: auto;
+        margin-right: 5%;
+
+    }
+
+    .Dashboard-menu2 h1 {
+        font-size: 12px;
+    }
+    
+    .attendance-table {
+        font-size: 12px;
+
+    }
+
+    .Dashboard-menu2 span {
+        margin-left: 27%;
+        font-size: 10px;
+    }
+
+}

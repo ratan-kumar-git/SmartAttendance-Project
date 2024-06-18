@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- Here can write all code for Home-->
+<link rel="stylesheet" href="{{ url_for('static', filename='pre_attendance.css') }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Javascript Code for continuous Update Time -->
+<script>
+    $(document).ready(function() {
+        function updateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+            const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+            $('#today_date').text('Date: ' + date);
+            $('#today_time').text('Time: ' + time);
+        }
+        setInterval(updateTime, 1000);  // Update every second
+        updateTime();  // Initial call to set the time immediately
+    });
+</script>
+
+<div class="main-page"> 
+    <div class="dashboard-page"> 
+        <!-- First box of Dashboard -->
+        <div class="Dashboard-menu-header">
+            <h7 id="today_date">Date: {{ today_date }}</h7>
+            <h1>Dashboard | Privious Attendance</h1>
+            <h7 id="today_time">Time: {{ today_time }}</h7> 
+        </div>
+    
+        <!-- Second box of Dashboard -->
+    
+        
+        <!-- Third box of Dashboard -->
+        
+        <div class="Dashboard-menu2">
+            <h1>View Privious Attendance</h1>
+            <form action="/pre_attendance" method="post">
+                <label for="">Choose Date:</label>
+                <input type="date" id="birthday" name="date", value="{{today_date}}">
+                <input type="submit">
+            </form>
+            <div class="attendance-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SI No.</th>
+                            <th>Name</th>
+                            <th>Roll No.</th>
+                            <th>Branch</th>
+                            <th>Year</th>
+                            <th>Date</th>
+                            <th>Tine</th>
+                            <th>Present</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-data">
+                        <!-- Data will be inserted here -->
+                        {% for atten in today_atten %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ atten.st_name }}</td>
+                                <td>{{ atten.roll_no }}</td>
+                                <td>{{ atten.branch }}</td>
+                                <td>{{ atten.year }}</td>
+                                <td>{{ atten.date }}</td>
+                                <td>{{ atten.time }}</td>
+                                <td><i class="fa-solid fa-user-check fa-lg"></i></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

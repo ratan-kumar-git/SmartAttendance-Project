@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Here can write all code for Home-->
+<link rel="stylesheet" href="{{ url_for('static', filename='add_user.css') }}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Javascript Code for continous Update Time -->
+
+<!-- Javascript Code for continuous Update Time -->
+<script>
+    $(document).ready(function() {
+        function updateTime() {
+            const now = new Date();
+            const date = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+            const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+            $('#today_date').text('Date: ' + date);
+            $('#today_time').text('Time: ' + time);
+        }
+        setInterval(updateTime, 1000);  // Update every second
+        updateTime();  // Initial call to set the time immediately
+    });
+</script>
+
+
+<div class="main-page"> 
+    <div class="dashboard-page"> 
+        <!-- First box of Dashboard -->
+        <div class="Dashboard-menu-header">
+            <h7 id="today_date">Date: {{ today_date }}</h7>
+            <h1>Dashboard | Add Student</h1>
+            <h7 id="today_time">Time: {{ today_time }}</h7> 
+        </div>
+
+        <!-- Second box of Dashboard -->
+        <div class="Dashboard-menux">
+            <form action="/add_user" method="POST">
+                <h4>Student Registration Form</h4>
+                <div class="Dashboard-menu">
+                    <div class="box1">
+                        <div class="input-container">
+                            <i class="fas fa-user"></i>
+                            <input type="text" name="st_name" placeholder="Name" required>
+                        </div>
+                        <div class="input-container">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" name="roll_no" placeholder="Roll No." required>
+                        </div>
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <select id="dropdown" name="branch" required>
+                                <option value="">Choose Branch</option>
+                                <option value="CSDA">CSDA</option>
+                                <option value="CSE">CSE</option>
+                                <option value="EE">EE</option>
+                                <option value="CS">CS</option>
+                            </select>
+                        </div>
+                        <div class="input-container">
+                            <i class="fas fa-lock"></i>
+                            <select id="dropdown" name="year" required>
+                                <option value="">Choose Year</option>
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+                            </select>
+                        </div>  
+                    </div>
+                    <div class="box2">
+                        <div class="video-container">
+                            <img src="{{ url_for('add_student_video_feed') }}" alt="Video_capture">
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-container">
+                    <input type="submit" value="Register & Capture Photo" name="click">
+                </div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <span>{{ messages[0] }}</span>
+                    {% endif %}
+                {% endwith %}
+            </form>
+        </div>
+
+        <div class="Dashboard-menu2">
+            <h1>Added Student Data</h1>
+            <div class="attendance-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SI No.</th>
+                            <th>Name</th>
+                            <th>Roll No.</th>
+                            <th>Branch</th>
+                            <th>Year</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-data">
+                        <!-- Data will be inserted here -->
+                        {% for student in students %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ student.st_name }}</td>
+                            <td>{{ student.roll_no }}</td>
+                            <td>{{ student.branch }}</td>
+                            <td>{{ student.year }}</td>
+                            <td>{{ student.created_at }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}
