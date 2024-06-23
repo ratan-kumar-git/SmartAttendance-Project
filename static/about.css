@@ -7,12 +7,11 @@
 
 .about {
     height: auto;
-    width: 70%;
-    background-color: rgb(147,219,246);
+    width: auto;
+    background-color: #E5E1DA;
     padding: 20px;
     border-radius: 25px;
-    margin-top: 120px;
-    margin-bottom: 40px;
+    margin: 100px 40px 25px;
 }
 
 .about h1 {
@@ -28,53 +27,62 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin: 20px;
+    margin: 10px;
 }
 
+/* Basic card styling */
 .box {
-    width: 280px;
-    height: auto;
-    margin: 15px;
-    border: 2px solid #202020;
-    border-radius: 25px;
-    text-align: center;
-    background-color: rgb(100, 84, 84)
-    
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px auto;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
 }
 
+/* Image box styling */
+.img-box {
+    text-align: center;
+    background-color: #007bff;
+    width: 250px;
+    height: 250px;
+}
+
+.img-box img {
+    width: 250px;
+    height: 250px;
+    object-fit: fill;
+}
+
+/* Description box styling */
 .description-box {
-    font-size: 14px;
-    background-color: rgb(40,190,244);
-    border-radius: 25px;
-    height: 70%;
+    padding: 20px;
+    text-align: left;
+}
+
+.description-box h1 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
 }
 
 .description-box li {
     list-style-type: none;
-    padding: 5px 0;
-}
-.description-box h1 {
-    font-size: 20px;
-    padding: 10px;
-
+    margin: 5px 0;
 }
 
-
-.img-box {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(199, 174, 174);
-    border-radius: 25px;
+.description-box li:before {
+    content: '• ';
+    color: #007bff;
+    font-weight: bold;
 }
 
-.img-box img {
-    width: 150px;
-    height: 170px;
-    padding: 5px;
-    border-radius: 50%; /* optional: add border radius to the image */
+.description-box p {
+    color: #777;
+    font-size: 0.9em;
 }
+
 @media (max-width:768px) {
     .about {
         width: 90%;
