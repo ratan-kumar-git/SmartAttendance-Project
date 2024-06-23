@@ -20,6 +20,8 @@
 
 .about p {
     text-align: justify;
+    font-size: 18px;
+    padding: 20px;
 }
 
 .display-box {
