@@ -3,7 +3,7 @@
 {% block content %}
 <!-- Here can write all code for Home-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 
 <div class="page">
     <div class="about">
@@ -18,7 +18,7 @@
         <div class="display-box">
             <div class="box">
                 <div class="img-box">
-                    <img src="static\ratan.jpeg" alt="image">
+                    <img src="{{ url_for('static', filename='Images/ratan.jpeg') }}" alt="image">
                 </div>
                 <div class="description-box">
                     <h1>Ratan Kumar</h1>
@@ -30,7 +30,7 @@
 
             <div class="box">
                 <div class="img-box">
-                    <img src="static\shubhangam.jpeg" alt="image">
+                    <img src="{{ url_for('static', filename='Images/shubhangam.jpeg') }}" alt="image">
                 </div>
                 <div class="description-box">
                     <h1>Shubhangam Kumar</h1>
@@ -43,7 +43,7 @@
 
             <div class="box">
                 <div class="img-box">
-                    <img src="#" alt="image">
+                    <img src="{{ url_for('static', filename='Images/camera_demo.jpg') }}" alt="image">
                 </div>
                 <div class="description-box">
                     <h1>Rishik Kumar</h1>
@@ -55,7 +55,7 @@
 
             <div class="box">
                 <div class="img-box">
-                    <img src="#" alt="image">
+                    <img src="{{ url_for('static', filename='Images/camera_demo.jpg') }}" alt="image">
                 </div>
                 <div class="description-box">
                     <h1>Prince Kumar</h1>
@@ -67,7 +67,7 @@
 
             <div class="box">
                 <div class="img-box">
-                    <img src="#" alt="image">
+                    <img src="{{ url_for('static', filename='Images/camera_demo.jpg') }}" alt="image">
                 </div>
                 <div class="description-box">
                     <h1>Anshul Khare</h1>

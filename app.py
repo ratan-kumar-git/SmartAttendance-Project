@@ -325,7 +325,7 @@ def register():
         flash('Registration successful. Please log in.', 'success')
         return redirect('/register')
 
-    return render_template('register.html')
+    return render_template('register.html', title='Signup | SmartAttendance')
 
 
 # Login Page
@@ -344,7 +344,7 @@ def login():
             error = 'Invalid email or password. Please try again.'
             flash(error, 'error')
 
-    return render_template('login.html')
+    return render_template('login.html', title='Login | SmartAttendance')
 
 
 # Dashboard Page
@@ -389,7 +389,7 @@ def dashboard_add_user():
             db.session.commit()
             students = Student.query.filter_by(user_id=user.id).all()
             flash('Add Student successful.', 'success')
-        return render_template('add_user.html', active_page='dashboard', user=user, title='Dashboard', students=students)
+        return render_template('add_user.html', active_page='dashboard', user=user, title='Dashboard | Add Student', students=students)
     else:
         flash('You need to login first.', 'error')
         return redirect('/login')
@@ -406,7 +406,7 @@ def dashboard_edit_user():
     if 'email' in session:
         user = User.query.filter_by(email=session['email']).first()
         students = Student.query.filter_by(user_id=user.id).all()
-        return render_template('edit_user.html', active_page='dashboard', user=user, title='Dashboard', students=students)
+        return render_template('edit_user.html', active_page='dashboard', user=user, title='Dashboard | All Students', students=students)
     else:
         flash('You need to login first.', 'error')
         return redirect('/login')
@@ -443,7 +443,7 @@ def edit_user(student_id):
                     flash(f'An error occurred while updating the student data: {e}', 'error')
                     return redirect(url_for('edit_user', student_id=student_id))
         
-        return render_template('edit_user1.html', active_page='dashboard', user=user, student=student, title='Edit User')
+        return render_template('edit_user1.html', active_page='dashboard', user=user, student=student, title='Dashboard | Edit Student')
     else:
         flash('You need to login first.', 'error')
         return redirect('/login')
@@ -475,7 +475,7 @@ def dashboard_take_attendance():
         user = User.query.filter_by(email=session['email']).first()
         current_date = datetime.datetime.now().strftime("%d-%b-%Y")
         today_atten = Attendance.query.filter_by(user_id = user.id, date=current_date).all()
-        return render_template('take_attendance.html', active_page='dashboard', user=user, today_atten=today_atten, title='Dashboard')
+        return render_template('take_attendance.html', active_page='dashboard', user=user, today_atten=today_atten, title='Dashboard | Take Attendance')
     else:
         flash('You need to login first.', 'error')
         return redirect('/login')
@@ -500,7 +500,7 @@ def dashboard_pre_attendance():
             today_date = date
             date = datetime.datetime.strptime(date, "%Y-%m-%d").strftime("%d-%b-%Y")
             today_atten = Attendance.query.filter_by(user_id=user.id, date=date).all()   
-        return render_template('pre_attendance.html', active_page='dashboard', user=user, today_atten=today_atten,  title='Dashboard', today_date=today_date)
+        return render_template('pre_attendance.html', active_page='dashboard', user=user, today_atten=today_atten,  title='Dashboard | Privious Attendance', today_date=today_date)
     else:
         flash('You need to login first.', 'error')
         return redirect('/login')

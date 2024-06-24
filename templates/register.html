@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>{{title}}</title>
+    <link rel="icon" href="{{ url_for('static', filename='Images/favicon.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 </head>
 <body>
     <div class="main-container">
@@ -30,7 +31,7 @@
         </div>
         <div class="img-container">
             <a href="/"><i class="fas fa-home"></i></a></i>
-            <img src="static\image 2.jpg" alt="Login Photo">
+            <img src="{{ url_for('static', filename='Images/login-regist.jpg') }}" alt="Login Photo">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     <span id="register">{{ messages[0] }}</span>

@@ -2,13 +2,13 @@
 
 {% block content %}
 <!-- Here can write all code for Home-->
-<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 <div class="page">
     <div class="display">
         <div class="hero">
             <div class="row">
                 <div class="hero-image">
-                    <img src="static\calendar-image.jpg" alt="Calendar Image">
+                    <img src="{{ url_for('static', filename='Images/calendar-image.jpg') }}" alt="Calendar Image">
                 </div>
                 <div class="hero-content">
                     <h1>SmartAttendance Make Easy Institute Student Attendance</h1>
@@ -23,6 +23,5 @@
     </div>
     
 </div>
-
 
 {% endblock %}

@@ -3,34 +3,43 @@
 {% block content %}
 <!-- Here can write all code for Home-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="{{ url_for('static', filename='contactus.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contactus.css') }}">
 <div class="display">
-    <div class="contactus-container">
-        <h1>Contact Us</h1>
-        <form action="/contactus" method="POST">
-            <div class="input-container">
-                <i class="fas fa-user" id="ratan"></i>
-                <input type="text" name="name" placeholder="Enter Name" required>
+    <div class="contactus">
+        <div class="contactus-header">
+            <h1>Contact Us</h1>
+        </div>
+        <div class="contactus-container">
+            <div class="contactus-img">
+                <img src="{{ url_for('static', filename='Images/contact-us-img.png') }}" alt="img">
             </div>
-            <div class="input-container">
-                <i class="fas fa-envelope"></i>
-                <input type="email" name="email" placeholder="Enter Gmail" required>
+            <div class="contactus-form">
+                <form action="/contactus" method="POST">
+                    <div class="input-container">
+                        <i class="fas fa-user" id="ratan"></i>
+                        <input type="text" name="name" placeholder="Enter Name" required>
+                    </div>
+                    <div class="input-container">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" placeholder="Enter Gmail" required>
+                    </div>
+                    <div class="input-container-msg">
+                        <textarea  type="text" name="message" rows="4" placeholder="Write Your Massage ......"></textarea> 
+                    </div>
+                    <input type="submit" value="Submit">
+                </form> 
+                {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            <ul id="register-massage">
+                                {% for message in messages %}
+                                    <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                {% endwith %}
             </div>
-            <div class="input-container-msg">
-                <textarea  type="text" name="message" rows="4" placeholder="Write Your Massage ......"></textarea> 
-            </div>
-            <input type="submit" value="Submit">
-        </form> 
-        {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul id="register-massage">
-                        {% for message in messages %}
-                            <li>{{ message }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-        {% endwith %}
-    </div>
+        </div>
+    </div> 
 </div>
 
 
