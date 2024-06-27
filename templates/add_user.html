@@ -77,11 +77,16 @@
                 <div class="submit-container">
                     <input type="submit" value="Register & Capture Photo" name="click">
                 </div>
-                {% with messages = get_flashed_messages() %}
+                <div class="note-container">
+                    <span>Note : Capture Photo in adequate light and white background.</span>
+                </div>
+                <div class="span-container">
+                    {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         <span>{{ messages[0] }}</span>
                     {% endif %}
-                {% endwith %}
+                    {% endwith %}
+                </div>
             </form>
         </div>
 

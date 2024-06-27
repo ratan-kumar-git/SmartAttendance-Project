@@ -153,14 +153,7 @@ def add_student_face():
                     i += 1
                     # Display the frame count on the frame
                     cv2.putText(flipped_frame, str(i), (a, b-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
-
-                    if len(face_data) >= 10:
-                        i = "Faces Added"
-                        # Display the frame count on the frame
-                        cv2.putText(flipped_frame, str(i), (a, b-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
                         
-                      
-
 
                 # Break the loop if 'Esc' key is pressed or we have collected 10 face images
                 if len(face_data) >= 10:
@@ -388,7 +381,7 @@ def dashboard_add_user():
             db.session.add(new_student)
             db.session.commit()
             students = Student.query.filter_by(user_id=user.id).all()
-            flash('Add Student successful.', 'success')
+            flash('Photo capturing Start   ==>   wait till photo Count is 90   ==>   Student added successfully', 'success')
         return render_template('add_user.html', active_page='dashboard', user=user, title='Dashboard | Add Student', students=students)
     else:
         flash('You need to login first.', 'error')

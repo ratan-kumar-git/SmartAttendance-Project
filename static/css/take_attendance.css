@@ -59,7 +59,7 @@
 .video-container img {
     margin: 5px 10px 25px;
     height: auto;
-    width: 320px;
+    width: 380px;
     border-radius: 25px;
 }
 
@@ -135,7 +135,7 @@ td i {
     }
 
     .video-container img {
-        width: 220px;
+        width: 90%;
 
     }
 
