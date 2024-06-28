@@ -37,9 +37,11 @@
                 <div class="video-container">
                     <img src="{{ url_for('take_atte_video_feed') }}" alt="Video_capture">
                 </div>
-                <div class="input-container">
-                    <input type="submit" value="Take Attendance">
-                </div>
+                <form action="/take_attendance" method="POST">
+                    <div class="input-container">
+                        <input type="submit" value="Take Attendance">
+                    </div>
+                </form>
             </div>
             <div class="box2">
                 <h1>Today Attendance</h1>

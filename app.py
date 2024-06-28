@@ -468,6 +468,8 @@ def dashboard_take_attendance():
         user = User.query.filter_by(email=session['email']).first()
         current_date = datetime.datetime.now().strftime("%d-%b-%Y")
         today_atten = Attendance.query.filter_by(user_id = user.id, date=current_date).all()
+        if request.form.get('click') == 'Take Attendance':
+            today_atten = Attendance.query.filter_by(user_id = user.id, date=current_date).all()        
         return render_template('take_attendance.html', active_page='dashboard', user=user, today_atten=today_atten, title='Dashboard | Take Attendance')
     else:
         flash('You need to login first.', 'error')
