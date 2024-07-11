@@ -263,10 +263,10 @@ def take_atten_face_reco():
                         check_today_atten = Attendance.query.filter_by(st_name=name, roll_no=roll_no, date=current_date).first()
                         if check_today_atten:
                             text = f"{name} your attendance marked"
-                            cv2.putText(flipped_frame, text, (a, b-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
+                            # cv2.putText(flipped_frame, text, (a, b-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
                            
                         else:
-                            cv2.putText(flipped_frame, text, (a, b-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
+                            # cv2.putText(flipped_frame, text, (a, b-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
                             new_student_atten = Attendance(user_id=user_id, st_name=name, roll_no=roll_no, branch=branch, year=year, date=current_date, time=current_time)
                             db.session.add(new_student_atten)
                             db.session.commit()
